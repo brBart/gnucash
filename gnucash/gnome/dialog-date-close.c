@@ -26,14 +26,12 @@
 #include <glib/gi18n.h>
 
 #include "dialog-utils.h"
-#include "qof.h"
 #include "gnc-gui-query.h"
 #include "gnc-ui.h"
 #include "gnc-ui-util.h"
 #include "gnc-date-edit.h"
 #include "gnc-account-sel.h"
 
-#include "business-gnome-utils.h"
 #include "dialog-date-close.h"
 
 typedef struct _dialog_date_close_window

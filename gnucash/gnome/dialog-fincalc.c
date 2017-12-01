@@ -26,17 +26,12 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <locale.h>
-#include <time.h>
 
 #include "dialog-fincalc.h"
 #include "dialog-utils.h"
 #include "finproto.h"
-#include "finvar.h"
 #include "gnc-amount-edit.h"
-#include "gnc-commodity.h"
 #include "gnc-component-manager.h"
-#include "gnc-date-edit.h"
-#include "gnc-engine.h"
 #include "gnc-gui-query.h"
 #include "gnc-locale-utils.h"
 

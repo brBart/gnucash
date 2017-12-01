@@ -29,13 +29,6 @@
 
 #include "gnc-html.h"
 #include "gnc-ui-util.h"
-#include "qof.h"
-
-#include "gncCustomer.h"
-#include "gncJob.h"
-#include "gncVendor.h"
-#include "gncEmployee.h"
-#include "gncInvoice.h"
 
 #include "business-urls.h"
 #include "dialog-customer.h"

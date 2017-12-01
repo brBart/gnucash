@@ -32,9 +32,7 @@
 #include "gnc-session.h"
 
 #include "gnc-ui-util.h"
-#include "Account.h"
 #include "gnc-plugin-page-account-tree.h"
-#include "dialog-account.h"
 
 #define DIALOG_FIND_ACCOUNT_CM_CLASS    "dialog-find-account"
 #define GNC_PREFS_GROUP                 "dialogs.find-account"

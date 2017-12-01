@@ -30,26 +30,16 @@
 
 #include "Account.h"
 #include "gnc-ui-util.h"
-#include "qof.h"
 #include "gnc-component-manager.h"
 #include "gnc-gtk-utils.h"
 
-#include "gncCustomer.h"
-#include "gncJob.h"
-#include "gncVendor.h"
-#include "gncOwner.h"
-#include "gncInvoice.h"
-
 #include "gnc-general-search.h"
-#include "qof.h"
 #include "business-gnome-utils.h"
 #include "dialog-customer.h"
 #include "dialog-job.h"
 #include "dialog-vendor.h"
 #include "dialog-employee.h"
 #include "dialog-invoice.h"
-
-#include "gnc-commodity.h"
 
 typedef enum
 {

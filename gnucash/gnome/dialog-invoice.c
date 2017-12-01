@@ -35,10 +35,8 @@
 #include "dialog-utils.h"
 #include "gnc-component-manager.h"
 #include "gnc-ui.h"
-#include "gnc-gui-query.h"
 #include "gnc-prefs.h"
 #include "gnc-ui-util.h"
-#include "gnc-date.h"
 #include "gnc-date-edit.h"
 #include "gnc-amount-edit.h"
 #include "gnucash-sheet.h"
@@ -47,8 +45,7 @@
 #include "dialog-search.h"
 #include "search-param.h"
 #include "gnc-session.h"
-#include "gncOwner.h"
-#include "gncInvoice.h"
+
 #include "gncInvoiceP.h"
 
 #include "gncEntryLedger.h"
@@ -60,17 +57,12 @@
 #include "dialog-job.h"
 #include "business-gnome-utils.h"
 #include "dialog-payment.h"
-#include "dialog-tax-table.h"
-#include "dialog-billterms.h"
-#include "dialog-account.h"
+
 #include "guile-mappings.h"
 #include "dialog-dup-trans.h"
 
-#include "dialog-query-view.h"
-
 #include "gnc-plugin-business.h"
 #include "gnc-plugin-page-invoice.h"
-#include "gnc-main-window.h"
 
 #include "dialog-transfer.h"
 

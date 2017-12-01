@@ -26,7 +26,6 @@
 #include <config.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include "assistant-loan.h"
@@ -35,16 +34,11 @@
 #include "SX-ttinfo.h"
 #include "gnc-amount-edit.h"
 #include "gnc-account-sel.h"
-#include "gnc-date.h"
 #include "gnc-exp-parser.h"
 #include "gnc-component-manager.h"
 #include "dialog-utils.h"
-#include "Account.h"
-#include "gnc-ui.h"
-#include "gnc-gui-query.h"
-#include "gnc-ui-util.h"
+
 #include "gnc-frequency.h"
-#include "gnc-engine.h"
 
 #ifndef HAVE_STRFMON
 # include "strfmon.h"

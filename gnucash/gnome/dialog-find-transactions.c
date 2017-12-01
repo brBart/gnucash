@@ -24,18 +24,15 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <stdio.h>
 
 #include "gnc-ui-util.h"
 #include "Query.h"
-#include "qof.h"
 #include "SX-book.h"
 #include "Transaction.h"
 #include "dialog-find-transactions.h"
 #include "gnc-main-window.h"
 #include "gnc-plugin-page-register.h"
 #include "search-param.h"
-#include "dialog-utils.h"
 
 #define GNC_PREFS_GROUP_SEARCH "dialogs.find"
 

@@ -32,7 +32,6 @@
 #include "gnc-session.h"
 
 #include "gnc-ui-util.h"
-#include "Account.h"
 
 #define DIALOG_IMAP_CM_CLASS    "dialog-imap-edit"
 #define GNC_PREFS_GROUP         "dialogs.imap-editor"

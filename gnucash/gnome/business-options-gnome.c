@@ -25,20 +25,17 @@
 #include <config.h>
 
 #include <gtk/gtk.h>
-#include <glib/gi18n.h>
 #include "swig-runtime.h"
 #include <libguile.h>
 
 #include "gnc-ui-util.h"
 #include "dialog-utils.h"
-#include "qof.h"
 #include "option-util.h"
 #include "gnc-general-search.h"
 
 #include "dialog-options.h"
 #include "business-options-gnome.h"
 #include "business-gnome-utils.h"
-#include "dialog-invoice.h"
 
 #define FUNC_NAME G_STRFUNC
 

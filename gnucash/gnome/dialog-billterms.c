@@ -30,11 +30,8 @@
 #include "dialog-utils.h"
 #include "gnc-component-manager.h"
 #include "gnc-ui.h"
-#include "gnc-gui-query.h"
 #include "gnc-ui-util.h"
-#include "qof.h"
 
-#include "gncBillTerm.h"
 #include "dialog-billterms.h"
 
 #define DIALOG_BILLTERMS_CM_CLASS "billterms-dialog"

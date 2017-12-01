@@ -31,17 +31,12 @@
 #include "gnc-currency-edit.h"
 #include "gnc-component-manager.h"
 #include "gnc-ui.h"
-#include "gnc-gui-query.h"
-#include "gnc-ui-util.h"
-#include "qof.h"
+
 #include "dialog-search.h"
 #include "search-param.h"
 #include "gnc-account-sel.h"
 
-#include "gncAddress.h"
-#include "gncEmployee.h"
 #include "gncEmployeeP.h"
-#include "gncOwner.h"
 
 #include "dialog-employee.h"
 #include "dialog-invoice.h"

@@ -30,13 +30,11 @@
 #include "gnc-amount-edit.h"
 #include "gnc-component-manager.h"
 #include "gnc-ui.h"
-#include "gnc-gui-query.h"
-#include "qof.h"
+
 #include "dialog-search.h"
 #include "search-param.h"
 
 #include "gncBusiness.h"
-#include "gncJob.h"
 #include "gncJobP.h"
 
 #include "business-gnome-utils.h"

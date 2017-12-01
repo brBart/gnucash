@@ -25,24 +25,18 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
 
 #include "dialog-utils.h"
 #include "gnc-amount-edit.h"
 #include "gnc-currency-edit.h"
 #include "gnc-component-manager.h"
 #include "gnc-ui.h"
-#include "gnc-gui-query.h"
-#include "gnc-ui-util.h"
-#include "qof.h"
 
 #include "dialog-search.h"
 #include "search-param.h"
 #include "QuickFill.h"
 #include "gnc-addr-quickfill.h"
 
-#include "gncAddress.h"
-#include "gncCustomer.h"
 #include "gncCustomerP.h"
 
 #include "business-gnome-utils.h"

@@ -36,11 +36,9 @@
 #include "gnc-component-manager.h"
 #include "gnc-currency-edit.h"
 #include "gnc-date-edit.h"
-#include "qof.h"
 #include "gnc-gui-query.h"
 #include "gnc-tree-view-account.h"
 #include "gnc-ui.h"
-#include "gnc-ui-util.h"
 
 
 #define ASSISTANT_STOCK_SPLIT_CM_CLASS "assistant-stock-split"

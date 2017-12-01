@@ -39,19 +39,12 @@
 
 #include "Recurrence.h"
 #include "Query.h"
-#include "Scrub.h"
 #include "Transaction.h"
 #include "dialog-utils.h"
 #include "assistant-acct-period.h"
 #include "gnc-component-manager.h"
-#include "qof.h"
-#include "gnc-date.h"
-#include "gnc-file.h"
 #include "gnc-frequency.h"
-#include "gnc-gui-query.h"
 #include "gnc-ui-util.h"
-#include "misc-gnome-utils.h"
-#include "gnc-session.h"
 
 #define ASSISTANT_ACCT_PERIOD_CM_CLASS "assistant-acct-period"
 

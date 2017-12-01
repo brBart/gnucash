@@ -29,13 +29,10 @@
 
 #include "dialog-commodity.h"
 #include "dialog-utils.h"
-#include "gnc-commodity.h"
 #include "gnc-component-manager.h"
-#include "qof.h"
 #include "gnc-tree-view-commodity.h"
 #include "gnc-prefs.h"
 #include "gnc-ui.h"
-#include "gnc-ui-util.h"
 #include "gnc-gnome-utils.h"
 #include "gnc-session.h"
 #include "gnc-warnings.h"

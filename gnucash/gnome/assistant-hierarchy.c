@@ -42,7 +42,6 @@
 #endif
 
 #include "gnc-account-merge.h"
-#include "dialog-new-user.h"
 #include "dialog-options.h"
 #include "dialog-utils.h"
 #include "dialog-file-access.h"
@@ -50,19 +49,14 @@
 #include "gnc-amount-edit.h"
 #include "gnc-currency-edit.h"
 #include "gnc-exp-parser.h"
-#include "gnc-general-select.h"
 #include "gnc-gnome-utils.h"
 #include "gnc-prefs.h"
 #include "gnc-hooks.h"
 #include "gnc-component-manager.h"
 #include "gnc-path.h"
-#include "gnc-gui-query.h"
 #include "gnc-tree-view-account.h"
-#include "gnc-ui-util.h"
 #include "io-example-account.h"
-#include "top-level.h"
-#include "gnc-main-window.h"
-#include "gnc-plugin-page-account-tree.h"
+
 
 #include "gnc-engine.h"
 static QofLogModule log_module = GNC_MOD_IMPORT;

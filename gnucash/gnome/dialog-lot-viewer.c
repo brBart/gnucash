@@ -35,7 +35,6 @@
 #include "Account.h"
 #include "cap-gains.h"
 #include "gnc-commodity.h"
-#include "qof.h"
 #include "gnc-lot.h"
 #include "Scrub3.h"
 #include "ScrubBusiness.h"
