@@ -808,8 +808,13 @@ configure_file(
 add_custom_target(uninstall
         COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
 
-SET_TARGET_PROPERTIES(gnc-core-utils gnc-module gnc-backend-sql gnc-backend-xml-utils
-  gnc-gnome PROPERTIES
+SET(_MODULES gnc-core-utils gnc-module gnc-backend-xml-utils gnc-gnome)
+IF (WITH_SQL)
+  LIST(APPEND _MODULES gnc-backend-sql)
+ENDIF(WITH_SQL)
+
+SET_TARGET_PROPERTIES(${_MODULES}
+  PROPERTIES
   LIBRARY_OUTPUT_DIRECTORY         ${LIBDIR_BUILD}
   IF (XCODE_VERSION)
     LIBRARY_OUTPUT_DIRECTORY_DEBUG   ${LIBDIR_BUILD}
