@@ -1,10 +1,10 @@
-############################################################
-          GnuCash 2.6.x README file.
 
-The last known stable series is the 2.6.0 series.
-------------------------------------------------------------
+GnuCash 2.7.x README File
+=========================
 
-##################
+*The last known stable series is the 2.6.0 series.*
+---------------------------------------------------
+
 Table of Contents:
 ------------------
 
@@ -12,13 +12,12 @@ Table of Contents:
   - Dependencies
   - Invocation/running
   - Internationalization
-  - Building & Installing
+  - Building and Installing
   - Supported Platforms
   - Additional Download Sites
-  - Getting the Source via SVN
+  - Getting the Source via Git
   - Developing GnuCash
 
-########
 Overview
 --------
 
@@ -118,17 +117,12 @@ Features include:
     SQLite3. Note that this does not support multiple concurrent
     access.
 
-
-
 Home Page:
 http://www.gnucash.org/
 
 Precompiled binaries:
 http://www.gnucash.org/download
 
-
-
-############
 Dependencies
 ------------
 
@@ -153,16 +147,15 @@ Microsoft Windows users can use the "Install Online Quotes" program in the Start
 
 To use the OFX and HBCI import features you need to obtain
 the following;
-  libofx: This library provide support for OFX file imports. 
-    GnuCash-2.0.0 and newer needs at least the version libofx-0.7.0
-    or newer. Sources can be found at
-    http://sourceforge.net/projects/libofx/
-  aqbanking: This library provide support for HBCI and openOFX online actions.
-    Three libraries, Ktoblzcheck, Gwenhywfar, and AQBanking, are required.
-    All may be obtained from
-    http://www2.aquamaniac.de/sites/download/packages.php
 
-#######
+    libofx: This library provide support for OFX file imports. 
+        GnuCash-2.0.0 and newer needs at least the version libofx-0.7.0
+        or newer. Sources can be found at http://sourceforge.net/projects/libofx/
+        
+    aqbanking: This library provide support for HBCI and openOFX online actions.
+        Three libraries, Ktoblzcheck, Gwenhywfar, and AQBanking, are required.
+        All may be obtained from http://www2.aquamaniac.de/sites/download/packages.php
+
 Running
 -------
 
@@ -178,8 +171,6 @@ files are GnuCash accounts that can be opened with the "Open File" menu entry.
 
 GnuCash responds to the following environment variables:
 
-  GNC_BOOTSTRAP_SCM - the location of the initial bootstrapping scheme code.
-
   GUILE_LOAD_PATH - an override for the GnuCash load path, used when
   loading scheme files.  It should be a string in the same form as the
   PATH or LD_LIBRARY_PATH environment variable.
@@ -193,7 +184,6 @@ GnuCash responds to the following environment variables:
   debugging earlier in the startup process than you can with --debug.
 
 
-####################
 Internationalization
 --------------------
 
@@ -203,47 +193,39 @@ we have a translation for it, but this may be overridden if one
 likes. Instructions for overriding the locale settings may be found at
 http://wiki.gnucash.org/wiki/Locale_Settings
 
-#####################
-Building & Installing
----------------------
+Building and Installing
+-----------------------
 
-(For additional build system details, see doc/README.build-system.)
+(For additional build system details, see cmake/README_CMAKE.txt)
 
-GnuCash uses GNU Automake to handle the build process, so for most of
-the details, see the generic instructions in INSTALL.  (If you are
+GnuCash uses CMake to handle the build process. (If you are
 building directly from Git, read the README.git file for more instructions.)
 Below we detail the GnuCash specific bits.
 
 Prior to building GnuCash, you will have to obtain and install the
 following packages:
 
+    - cmake, ninja-build (optional)
 
-  autoconf, automake, and libtool: Available at ftp://ftp.gnu.org/gnu.
-    RPM's and debs are widely available with most distributions.
+    - gnome development system: headers, libraries, etc.
 
-  gnome development system: headers, libraries, etc.
-
-  libxml2: available from ftp.gnome.org
-
-  SWIG: 2.0.10 or later is needed. See http://www.swig.org or
-    http://sourceforge.net/projects/swig/
+    - SWIG: 2.0.10 or later is needed. See http://www.swig.org or
+      http://sourceforge.net/projects/swig/
 
 What you'll need to get and install in order to make sure you have all
 of these pieces properly installed for your particular operating
 system flavor will vary, but here's at least a partial list of what
 you'll need for the systems we know about:
 
-  Debian/GNU/Linux: see README.dependencies and 
-    current:
-      libgnome-dev
-      libwebkit-dev
-      guile1.8
-      libguile9-dev
-      libguile9-slib
+    Debian/GNU/Linux: see README.dependencies and current:
+        libgnome-dev
+        libwebkit-dev
+        guile1.8
+        libguile9-dev
+        libguile9-slib
 
 
-  SuSE:
-    see README.dependencies
+    SuSE: see README.dependencies
 
 GnuCash understands a few non-standard ./configure options.  You
 should run ./configure --help for the most up to date summary of the
@@ -253,13 +235,13 @@ If you only want a particular language installed, you can set the
 LINGUAS environment variable before you run configure. For example,
 to only install the French translations, run
 
-  $ export LINGUAS=fr
-  $ ./configure
+    $ export LINGUAS=fr
+    $ ./configure
 
 If you want to make sure that all languages get installed, run
 
-  $ unset LINGUAS
-  $ ./configure
+    $ unset LINGUAS
+    $ ./configure
 
 Note that while you need the Gnome libraries installed, you don't
 need to have a Gnome desktop.  
@@ -268,17 +250,17 @@ Runtime and install destinations are separate.  The --prefix you
 specify to configure determines where the resulting binary will look
 for things at runtime.  Normally this determines where a "make
 install" will put all the files.  However, automake also supports the
-variable.  DESTDIR is used during the `make install' step to relocate
+variable.  DESTDIR is used during the `make install` step to relocate
 install objects into a staging area.  Each object and path is prefixed
-with the value of `DESTDIR' before being copied into the install area.
+with the value of `DESTDIR` before being copied into the install area.
 Here is an example of typical DESTDIR usage:
 
      make DESTDIR=/tmp/staging install
 
-   This places install objects in a directory tree built under
-`/tmp/staging'.  If `/gnu/bin/foo' and `/gnu/share/aclocal/foo.m4' are
+This places install objects in a directory tree built under
+`/tmp/staging`.  If `/gnu/bin/foo` and `/gnu/share/aclocal/foo.m4` are
 to be installed, the above command would install
-`/tmp/staging/gnu/bin/foo' and `/tmp/staging/gnu/share/aclocal/foo.m4'.
+`/tmp/staging/gnu/bin/foo` and `/tmp/staging/gnu/share/aclocal/foo.m4`.
 
 DESTDIR can be helpful when trying to build install images and
 packages.
@@ -289,24 +271,20 @@ will need to set the environment variables GNOME_PATH and
 GNOME_LIBCONFIG_PATH.  See the manpage for gnome-config for more
 details.
 
-
-###################
 Supported Platforms
 -------------------
 
 GnuCash 2.x is known to work with the following operating systems:
 
-GNU/Linux             -- x86, Sparc, PPC
-FreeBSD               -- x86
-OpenBSD               -- x86
-MacOS X		      -- PPC and Intel, Versions 10.5 and later
-
+    GNU/Linux             -- x86, Sparc, PPC
+    FreeBSD               -- x86
+    OpenBSD               -- x86
+    MacOS X		      -- PPC and Intel, Versions 10.5 and later
 
 GnuCash can probably be made to work on any platform for which Gtk+ can,
 given sufficient effort. If you try and encounter difficulty, please join
 the developer's mailing list, gnucash-devel@gnucash.org.
 
-#########################
 Downloads
 -------------------------
 
@@ -316,7 +294,6 @@ http://www.gnucash.org. We depend upon distribution packagers for
 GNU/Linux and *BSD binaries, so if you want a more recent version than
 your distribution provides you'll have to build from source.
 
-##############################
 Getting Source with Git
 ------------------------------
 
@@ -325,7 +302,6 @@ browse the code at https://github.com/Gnucash/gnucash. Clone URIs are
 on that page, or if you have a Github account you can fork it
 there.
 
-##################
 Developing GnuCash
 ------------------
 Before you start developing GnuCash, you should do the following:
