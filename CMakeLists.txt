@@ -63,11 +63,6 @@ OPTION (DISABLE_NLS "do not use Native Language Support" OFF)
 OPTION (DISABLE_DEPRECATED_GLIB "don't use deprecated glib functions" OFF)
 OPTION (DISABLE_DEPRECATED_GTK "don't use deprecated gtk, gdk or gdk-pixbuf functions" OFF)
 OPTION (DISABLE_DEPRECATED_GNOME "don't use deprecated gnome functions" OFF)
-
-# If AUTOTOOLS_IN_DIST is OFF, then 'dist' wont run autogen.sh, and 'distcheck'
-# won't run the autotools distcheck. Note that various Makefile.am files are still
-# included in the dist when this is OFF. I'll fix that at some point.
-OPTION (AUTOTOOLS_IN_DIST "Add autotools support to distribution tarballs." ON)
 # ############################################################
 
 # These are also settable from the command line in a similar way.
@@ -721,11 +716,8 @@ SET(PACKAGE_PREFIX "${PACKAGE}-${PACKAGE_VERSION}")
 SET(DIST_FILE "${PACKAGE_PREFIX}.tar")
 
 SET(toplvl_DIST_local ${gnucash_DOCS} ChangeLog.2015 ChangeLog.2016
-  CMakeLists.txt configure.ac Makefile.am make-gnucash-potfiles.in README)
+  CMakeLists.txt make-gnucash-potfiles.in README)
 
-IF(BUILDING_FROM_VCS AND AUTOTOOLS_IN_DIST)
-  SET(toplvl_DIST_local ${toplvl_DIST_local} autogen.sh)
-ENDIF()
 
 SET_LOCAL_DIST(toplvl_DIST ${toplvl_DIST_local})
 
@@ -747,14 +739,6 @@ IF (BUILDING_FROM_VCS)
   SET(BUILD_SOURCE_DIR ${CMAKE_BINARY_DIR})
 ELSE()
   SET(BUILD_SOURCE_DIR ${CMAKE_SOURCE_DIR})
-  IF(AUTOTOOLS_IN_DIST)
-    # Include autotools generated file in the dist
-    LIST(APPEND ALL_DIST compile config.guess config.sub configure depcomp install-sh missing
-            libgnucash/doc/design/mdate-sh libgnucash/doc/design/texinfo.tex)
-    IF (EXISTS ${CMAKE_SOURCE_DIR}/test-driver)  # test-driver only created for automake 1.12+.
-      LIST(APPEND ALL_DIST test-driver)
-    ENDIF()
-  ENDIF()
 ENDIF()
 
 # Write a dist manifest
@@ -775,7 +759,6 @@ ADD_CUSTOM_COMMAND(OUTPUT ${DIST_FILE}.gz ${DIST_FILE}.bz2
            -D BUILD_SOURCE_DIR=${BUILD_SOURCE_DIR}
            -D BUILDING_FROM_VCS=${BUILDING_FROM_VCS}
            -D SHELL=${SHELL}
-           -D AUTOTOOLS_IN_DIST=${AUTOTOOLS_IN_DIST}
            -P ${CMAKE_SOURCE_DIR}/common/cmake_modules/MakeDist.cmake
 
         DEPENDS
@@ -791,7 +774,6 @@ ADD_CUSTOM_TARGET(distcheck DEPENDS dist
             -D PACKAGE_PREFIX=${PACKAGE_PREFIX}
             -D CMAKE_C_FLAGS=${CMAKE_C_FLAGS}
             -D CMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}
-            -D AUTOTOOLS_IN_DIST=${AUTOTOOLS_IN_DIST}
             -P ${CMAKE_SOURCE_DIR}/common/cmake_modules/MakeDistCheck.cmake
         )
 

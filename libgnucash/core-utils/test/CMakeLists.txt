@@ -27,5 +27,5 @@ IF (MAC_INTEGRATION)
   TARGET_COMPILE_DEFINITIONS(test-userdata-dir PRIVATE ${GTK_MAC_CFLAGS_OTHER})
 ENDIF(MAC_INTEGRATION)
 
-SET_DIST_LIST(test_core_utils_DIST CMakeLists.txt Makefile.am test-gnc-glib-utils.c
+SET_DIST_LIST(test_core_utils_DIST CMakeLists.txt test-gnc-glib-utils.c
     test-resolve-file-path.c test-userdata-dir.c test-userdata-dir-invalid-home.c)
